@@ -2,41 +2,58 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* Dashboard Builder Design System - Modern Purple/Blue Theme with Glass Morphism */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Core brand colors */
+    --primary: 252 70% 65%;
+    --primary-glow: 252 85% 75%;
+    --primary-dark: 252 60% 55%;
+    --primary-foreground: 0 0% 98%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    /* Dashboard-specific colors */
+    --dashboard-bg: 240 10% 4%;
+    --dashboard-grid: 240 5% 8%;
+    --widget-bg: 240 8% 10%;
+    --widget-border: 240 15% 18%;
+    --widget-shadow: 240 10% 4%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    /* Glass morphism */
+    --glass-bg: 240 8% 12%;
+    --glass-border: 240 20% 25%;
+    --glass-shadow: 0 0% 0%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
-
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
-
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
-
-    --destructive: 0 84.2% 60.2%;
+    /* Semantic colors */
+    --background: 240 10% 4%;
+    --foreground: 210 40% 98%;
+    --card: 240 8% 10%;
+    --card-foreground: 210 40% 98%;
+    --popover: 240 8% 12%;
+    --popover-foreground: 210 40% 98%;
+    --secondary: 240 15% 18%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 240 10% 15%;
+    --muted-foreground: 215 20% 65%;
+    --accent: 252 70% 65%;
+    --accent-foreground: 240 10% 4%;
+    --destructive: 0 84% 60%;
     --destructive-foreground: 210 40% 98%;
+    --border: 240 15% 18%;
+    --input: 240 15% 18%;
+    --ring: 252 70% 65%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)));
+    --gradient-widget: linear-gradient(145deg, hsl(var(--widget-bg)), hsl(var(--glass-bg)));
+    --gradient-dashboard: linear-gradient(180deg, hsl(var(--dashboard-bg)), hsl(var(--dashboard-grid)));
 
-    --radius: 0.5rem;
+    /* Shadows */
+    --shadow-widget: 0 8px 32px -8px hsl(var(--widget-shadow) / 0.3);
+    --shadow-glass: 0 4px 16px -4px hsl(var(--glass-shadow) / 0.1);
+    --shadow-glow: 0 0 20px hsl(var(--primary) / 0.3);
+
+    --radius: 0.75rem;
 
     --sidebar-background: 0 0% 98%;
 
@@ -55,34 +72,32 @@ All colors MUST be HSL.
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
-  .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
+  .light {
+    /* Light mode overrides */
+    --dashboard-bg: 210 20% 98%;
+    --dashboard-grid: 210 20% 95%;
+    --widget-bg: 0 0% 100%;
+    --widget-border: 210 20% 90%;
+    --widget-shadow: 210 20% 85%;
+    
+    --glass-bg: 0 0% 100%;
+    --glass-border: 210 20% 85%;
+    
+    --background: 210 20% 98%;
+    --foreground: 222 84% 5%;
+    --card: 0 0% 100%;
+    --card-foreground: 222 84% 5%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 84% 5%;
+    --secondary: 210 20% 95%;
+    --secondary-foreground: 222 47% 11%;
+    --muted: 210 20% 95%;
+    --muted-foreground: 215 16% 47%;
+    --border: 210 20% 90%;
+    --input: 210 20% 90%;
+    
+    --shadow-widget: 0 8px 32px -8px hsl(210 20% 85% / 0.4);
+    --shadow-glass: 0 4px 16px -4px hsl(210 20% 85% / 0.2);
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
@@ -100,6 +115,65 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+
+  /* Dashboard-specific styles */
+  .dashboard-bg {
+    background: var(--gradient-dashboard);
+  }
+
+  .widget-card {
+    background: var(--gradient-widget);
+    border: 1px solid hsl(var(--widget-border));
+    box-shadow: var(--shadow-widget);
+    backdrop-filter: blur(8px);
+  }
+
+  .glass-panel {
+    background: hsl(var(--glass-bg) / 0.8);
+    border: 1px solid hsl(var(--glass-border) / 0.3);
+    backdrop-filter: blur(12px);
+    box-shadow: var(--shadow-glass);
+  }
+
+  /* Smooth transitions */
+  .transition-smooth {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  /* Custom scrollbar */
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 6px;
+  }
+  
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: hsl(var(--muted));
+  }
+  
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background: hsl(var(--primary) / 0.5);
+    border-radius: 3px;
+  }
+}
+
+@layer components {
+  .glow-effect {
+    box-shadow: var(--shadow-glow);
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.5s ease-out forwards;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 }
