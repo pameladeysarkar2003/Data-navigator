@@ -1,8 +1,8 @@
 import React from 'react';
-import { Dashboard } from '@/components/dashboard/Dashboard';
+import { Layout } from '@/components/knowledge-graph/Layout';
 
 const Index = () => {
-  return <Dashboard />;
+  return <Layout />;
 };
 
 export default Index;
